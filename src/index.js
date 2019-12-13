@@ -1,12 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from './App'
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//如果想要全局的扩展React.Component的protype，比如：想把ajax的方法全局挂载组件的this上，就可以使用下面的方式
+
+//引入所有的ajax的请求
+// import * as services from './services'
+//在protype上挂载一个叫http的东西，然后就可以在组件内部通过this.http的方法执行一些操作
+// React.Component.prototype.http = services
+
+
+render(<App />, document.getElementById('root'));
+
+
